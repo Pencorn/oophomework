@@ -1,0 +1,30 @@
+#include<iostream>
+#include<windows.h>
+using namespace std;
+struct data
+{
+	char name;
+	int age;
+	float score;
+
+}*p;
+
+void putdata(data *p)
+{
+	cout << "输入学生名字" << endl;
+	cin >> p->name;
+	cout << endl;
+	cout << "输入学生年龄(16-25岁)";
+	cin >> p->age; cout << endl;
+	cout << "输入五级制c++分数(1-100分)";
+	cin >> p->score;
+}
+
+
+int main()
+{
+	putdata(p);
+	cout << p->name << endl;
+	system("pause");
+	return 0;
+}

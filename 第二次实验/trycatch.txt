@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+struct data
+{
+	char name;
+	int age;
+	float score;
+
+}*p;
+void putdata(data *p)
+{
+	cout << "输入学生名字";
+	cin >> p->name;
+	cout << endl;
+	cout << "输入学生年龄(16-25岁)";
+	cin >> p->age; cout << endl;
+	cout << "输入五级制c++分数(1-100分)";
+	cin >> p->score;
+
+}
+
+float check(data *p)
+{
+	if (!(p->age >= 16 && p->age <= 25))
+		throw p->age;
+
+	if (p->score <= 5 && p->score >= 0)
+		return p->score;
+	else throw p->name;
+
+}
+int main()
+{
+	putdata;
+	try
+	{
+		check(p);
+	}
+	catch (int)
+	{
+		cout << "学生姓名不合适或不正确" << endl;
+	}
+	catch (float)
+	{
+		cout << "学生成绩输入错误" << endl;
+	}
+	return 0;
+}
